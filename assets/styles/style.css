@@ -1,0 +1,205 @@
+/* Fontes */
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("../fonts/LibreFranklin-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("../fonts/LibreFranklin-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Libre Franklin", Arial, sans-serif;
+  --vermelho: #c62828;
+  --verde-whats: #199821;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+/* Navbar */
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--vermelho);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.box-logo-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nome-logo-header {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.box-btns-header {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Menu mobile */
+/* Menu fechado */
+.ul-header {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 260px;
+  background: var(--vermelho);
+  padding: 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+/* Menu aberto */
+.ul-header.active {
+  transform: translateX(0);
+}
+
+.item-li {
+  border-bottom: 1px solid #eee;
+}
+
+.link-item-li {
+  display: block;
+  padding: 14px 0;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.link-item-li:hover {
+  color: var(--vermelho);
+}
+
+/* Botão fechar dentro do menu */
+.item-fechar {
+  border-bottom: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.btn-fechar-menu {
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+/* Botão hamburguer */
+.btn-menu-header {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-menu-header img {
+  transition: transform 0.3s;
+}
+
+/* CTA escondido no mobile */
+.cta-header {
+  display: none;
+}
+
+@media (min-width: 375px) {
+  .box-logo-header {
+    gap: 24px;
+  }
+  .nome-logo-header {
+    font-size: 16px;
+  }
+}
+
+/* Responsividade - Desktop 1024px+ */
+@media (min-width: 1024px) {
+  .navbar-header {
+    padding: 12px 42px;
+  }
+
+  /* Menu normal */
+  .ul-header {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    gap: 16px;
+  }
+
+  .item-li {
+    border: none;
+  }
+
+  .item-fechar {
+    display: none;
+  }
+
+  .link-item-li {
+    color: #fff;
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .link-item-li:hover {
+    color: #fefefe;
+  }
+
+  /* CTA */
+  .cta-header {
+    display: block;
+    font-size: 16px;
+    display: inline-block;
+    background: white;
+    color: var(--vermelho);
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  /* Esconde botão menu */
+  .btn-menu-header {
+    display: none;
+  }
+}
