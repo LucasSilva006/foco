@@ -24,17 +24,17 @@
 }
 
 :root {
-  --font-family: "Libre Franklin", Arial, sans-serif;
+  --fonte-principal: "Libre Franklin", Arial, sans-serif;
   --vermelho: #c62828;
   --verde-whats: #199821;
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--fonte-principal);
   line-height: 1.6;
 }
 
-/* Navbar */
+/* HEADER */
 
 .navbar-header {
   display: flex;
@@ -140,9 +140,140 @@ body {
   display: none;
 }
 
+
+/* COMO COMPRAR */
+
+.como-comprar {
+  background: linear-gradient(#0D47A1, #08306b);
+  color: #fff;
+  padding: 48px 24px;
+  max-width: 500px;
+}
+
+.como-comprar h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.como-comprar .subtit-como-comprar {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.passo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.passo::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: -32px;
+  width: 2px;
+  height: 32px;
+  background: white;
+}
+
+.passo:first-child::before {
+  display: none;
+}
+
+.numero {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.passo p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* FOOTER */
+
+.footer {
+  background: linear-gradient(180deg, #0D47A1, #020b1c);
+  color: #fff;
+  padding: 40px 24px 24px;
+  font-size: 14px;
+}
+
+.box-logo-final-footer {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.img-logo-final {
+  width: 90px;
+  margin-bottom: 12px;
+}
+
+.slogan-final {
+  font-size: 16px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-col h4 {
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+
+/* Responsividade - Desktop 375px+ */
 @media (min-width: 375px) {
   .box-logo-header {
-    gap: 24px;
+    gap: 16px;
   }
   .nome-logo-header {
     font-size: 16px;
